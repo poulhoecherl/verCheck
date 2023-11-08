@@ -13,19 +13,23 @@ namespace verCheck
             Console.ResetColor();
 
             List<data.Root> datas = new();
-            
-            List<data.Address> bkAddys = new();
-            bkAddys.Add(new data.Address() { Street = "123 Main St", City = "New York", County = "New York", State = "NY" });
-            bkAddys.Add(new data.Address() { Street = "456 Main St", City = "New York", County = "New York", State = "NY" });
-            bkAddys.Add(new data.Address() { Street = "789 Main St", City = "New York", County = "New York", State = "NY" });
+
+            List<data.Address> bkAddys = new()
+            {
+                new data.Address() { Street = "123 Main St", City = "New York", County = "New York", State = "NY" },
+                new data.Address() { Street = "456 Main St", City = "New York", County = "New York", State = "NY" },
+                new data.Address() { Street = "789 Main St", City = "New York", County = "New York", State = "NY" }
+            };
 
 
             datas.Add(new data.Root() { Name="Burger King", Hash= Guid.NewGuid().ToString(), Addresses=bkAddys });
 
-            List<data.Address> wendysAddys = new();
-            wendysAddys.Add(new data.Address() { Street = "123 Main St", City = "St Paul", County = "Ramsey", State = "MN" });
-            wendysAddys.Add(new data.Address() { Street = "456 Main St", City = "Kalispell", County = "Flathead", State = "MT" });
-            wendysAddys.Add(new data.Address() { Street = "789 Main St", City = "Alpine", County = "Wyoming", State = "WY" });
+            List<data.Address> wendysAddys = new()
+            {
+                new data.Address() { Street = "123 Main St", City = "St Paul", County = "Ramsey", State = "MN" },
+                new data.Address() { Street = "456 Main St", City = "Kalispell", County = "Flathead", State = "MT" },
+                new data.Address() { Street = "789 Main St", City = "Alpine", County = "Wyoming", State = "WY" }
+            };
 
 
             datas.Add(new data.Root() { Name = "Wendys", Hash = Guid.NewGuid().ToString(), Addresses= wendysAddys });
