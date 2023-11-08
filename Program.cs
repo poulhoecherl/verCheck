@@ -50,7 +50,7 @@ namespace verCheck
             Console.WriteLine("==========================================================");
             Console.ResetColor();
 
-            Console.WriteLine("Last Change From: OFFICE");
+            Console.WriteLine("Last Change From: HOME");
         }
     }
 }
