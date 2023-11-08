@@ -1,0 +1,3 @@
+[submodule "verCheckData"]
+	path = verCheckData
+	url = https://github.com/poulhoecherl/verCheckData
