@@ -1,4 +1,6 @@
-﻿namespace verCheck
+﻿using data = verCheckData;
+
+namespace verCheck
 {
     internal class Program
     {
@@ -10,14 +12,32 @@
             Console.WriteLine("Git Submodule Demo");
             Console.ResetColor();
 
-            List<verCheckData> datas = new();
-            datas.Add(new verCheckData() { Name="EC", Hash= Guid.NewGuid().ToString() });
-            datas.Add(new verCheckData() { Name = "OPS", Hash = Guid.NewGuid().ToString() });
+            List<data.Root> datas = new();
+            
+            List<data.Address> bkAddys = new();
+            bkAddys.Add(new data.Address() { Street = "123 Main St", City = "New York", County = "New York", State = "NY" });
+            bkAddys.Add(new data.Address() { Street = "456 Main St", City = "New York", County = "New York", State = "NY" });
+            bkAddys.Add(new data.Address() { Street = "789 Main St", City = "New York", County = "New York", State = "NY" });
+
+
+            datas.Add(new data.Root() { Name="Burger King", Hash= Guid.NewGuid().ToString(), Addresses=bkAddys });
+
+            List<data.Address> wendysAddys = new();
+            wendysAddys.Add(new data.Address() { Street = "123 Main St", City = "St Paul", County = "Ramsey", State = "MN" });
+            wendysAddys.Add(new data.Address() { Street = "456 Main St", City = "Kalispell", County = "Flathead", State = "MT" });
+            wendysAddys.Add(new data.Address() { Street = "789 Main St", City = "Alpine", County = "Wyoming", State = "WY" });
+
+
+            datas.Add(new data.Root() { Name = "Wendys", Hash = Guid.NewGuid().ToString(), Addresses= wendysAddys });
 
 
             foreach (var data in datas)
             {
                 Console.WriteLine($"   > Name: {data.Name}, Hash: {data.Hash}");
+                foreach( var addy in data.Addresses)
+                {
+                    Console.WriteLine($"      > Street: {addy.Street}, City: {addy.City}, County: {addy.County}, State: {addy.State}");
+                }
             }
 
             Console.ForegroundColor = ConsoleColor.Yellow;
