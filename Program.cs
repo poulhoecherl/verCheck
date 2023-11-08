@@ -46,6 +46,7 @@ namespace verCheck
             Console.WriteLine("==========================================================");
             Console.ResetColor();
 
+            Console.WriteLine("Last Change From: OFFICE");
         }
     }
 }
